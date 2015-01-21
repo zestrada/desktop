@@ -1,0 +1,3 @@
+xmodmap ~/github/desktop/xmodmap_caps
+xrdb -merge ~/.Xresources
+exec awesome
