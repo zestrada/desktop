@@ -1,0 +1,5 @@
+#!/bin/bash
+while /bin/true; do
+  xset dpms force off
+  sleep 2
+done

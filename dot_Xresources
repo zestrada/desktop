@@ -123,9 +123,14 @@
 ! URxvt*tabbar-bg:                      colour
 ! URxvt*tabbar-fg:                      colour
 ! URxvt*url-launcher:                   string
-URxvt.keysym.Control-0: command:\033]710;-*-dina-medium-r-normal--13-*-*-*-*-*-*-*\007
-URxvt.keysym.Control-minus: command:\033]710;-*-dina-medium-r-normal--15-*-*-*-*-*-*-*\007
-URxvt.keysym.Control-equal: command:\033]710;-*-dina-medium-r-normal--16-*-*-*-*-*-*-*\007
+
+
+Urxvt.font: xft:Inconsolata:pixelsize=18
+URxvt.resize-font.smaller: C-minus
+URxvt.resize-font.bigger: C-plus
+URxvt.resize-font.reset: C-equal
+URxvt.resize-font.show: C-question
+Urxvt.perl-ext-common: default,tabbed,matcher,resize-font,-tabbed
 ! --- ~/.Xresources ------------------------------------------------------------
 ! !
 ! ------------------------------------------------------------------------------

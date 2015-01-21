@@ -1,3 +1,9 @@
 xmodmap ~/github/desktop/xmodmap_caps
+#xmodmap -e "pointer = 1 2 3 1 3 6 7 8 9 10 11 12"
 xrdb -merge ~/.Xresources
+xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation" 1
+xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Button" 2
+xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Timeout" 200 4 5
+xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Axes" 6 7 4 5
+xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Middle Button Emulation" 1
 exec awesome
