@@ -2,12 +2,14 @@
 require("awful")
 require("awful.autofocus")
 require("awful.rules")
+require("awful.tooltip")
 -- Theme handling library
 require("beautiful")
 -- Notification library
 require("naughty")
 local keydoc = require("keydoc")
--- local lain = require("lain")
+
+-- vicious = require("vicious")
 
 function run_once(cmd)
   findme = cmd
@@ -108,6 +110,24 @@ mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
 
 -- {{{ Wibox
 
+batterywidget = widget({ type = "textbox" })
+batterywidget.text = " | Battery | "
+batterywidgettimer = timer({ timeout = 60 })
+
+batterytooltip = awful.tooltip({ objects = { batterywidget } })
+batterytooltip:set_text("Loading...")
+
+batterywidgettimer:add_signal("timeout",
+  function()
+    fh = assert(io.popen("acpitool |grep -v '>'", "r"))
+    acpi_out = fh:read("*all")
+    acpi_iter = string.gmatch(acpi_out, ",%s*(.+%%)")
+    batterywidget.text = " |" .. acpi_iter() .. " | "
+    batterytooltip:set_text(acpi_out)
+    fh:close()
+  end
+)
+batterywidgettimer:start()
 -- Create a textclock widget
 mytextclock = awful.widget.textclock({ align = "right" })
 
@@ -191,6 +211,7 @@ for s = 1, screen.count() do
             layout = awful.widget.layout.horizontal.leftright
         },
         mylayoutbox[s],
+        batterywidget,
         mytextclock,
         s == 1 and mysystray or nil,
         mytasklist[s],
@@ -209,8 +230,8 @@ root.buttons(awful.util.table.join(
 
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
-    awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
-    awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
+    awful.key({ modkey, "Control" }, "Left",   awful.tag.viewprev       ),
+    awful.key({ modkey, "Control" }, "Right",  awful.tag.viewnext       ),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore),
 
     awful.key({ modkey,           }, "j",
@@ -288,7 +309,14 @@ clientkeys = awful.util.table.join(
             c.maximized_horizontal = not c.maximized_horizontal
             c.maximized_vertical   = not c.maximized_vertical
         end),
-    awful.key({ modkey, }, "F1", keydoc.display)
+    awful.key({ modkey, }, "F1", keydoc.display),
+    awful.key({ modkey }, "Down",  function () awful.client.moveresize(  0,  20,   0,   0) end),
+    awful.key({ modkey }, "Up",    function () awful.client.moveresize(  0, -20,   0,   0) end),
+    awful.key({ modkey }, "Left",  function () awful.client.moveresize(-20,   0,   0,   0) end),
+    awful.key({ modkey }, "Right", function () awful.client.moveresize( 20,   0,   0,   0) end),
+    awful.key({ modkey, }, "Next", function () awful.util.spawn("xbacklight -dec 5") end),
+    awful.key({ modkey, }, "Prior", function () awful.util.spawn("xbacklight -inc 5") end) 
+
 )
 
 -- Compute the maximum number of digit we need, limited to 9
