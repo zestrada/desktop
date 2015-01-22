@@ -7,7 +7,18 @@ require("beautiful")
 -- Notification library
 require("naughty")
 local keydoc = require("keydoc")
---local lain = require("lain")
+-- local lain = require("lain")
+
+function run_once(cmd)
+  findme = cmd
+  firstspace = cmd:find(" ")
+  if firstspace then
+    findme = cmd:sub(0, firstspace-1)
+  end
+  awful.util.spawn_with_shell("pgrep -u $USER -x " .. findme .. " > /dev/null || (" .. cmd .. ")")
+end
+
+run_once("compton -b")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -39,8 +50,8 @@ end
 beautiful.init("/home/zak/.config/awesome/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "urxvt -fn 'xft:Inconsolata:pixelsize=20'"
-editor = os.getenv("EDITOR") or "nano"
+terminal = "urxvtc"
+editor = os.getenv("EDITOR") or "vi"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -96,10 +107,6 @@ mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
 -- }}}
 
 -- {{{ Wibox
-
--- Hello world
-mytextbox = wibox.widget.textbox()
-mytextbox:set_text("Hello world")
 
 -- Create a textclock widget
 mytextclock = awful.widget.textclock({ align = "right" })
@@ -184,7 +191,6 @@ for s = 1, screen.count() do
             layout = awful.widget.layout.horizontal.leftright
         },
         mylayoutbox[s],
-        mytextbox,
         mytextclock,
         s == 1 and mysystray or nil,
         mytasklist[s],
@@ -385,14 +391,6 @@ end)
 client.add_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
-function run_once(cmd)
-  findme = cmd
-  firstspace = cmd:find(" ")
-  if firstspace then
-    findme = cmd:sub(0, firstspace-1)
-  end
-  awful.util.spawn_with_shell("pgrep -u $USER -x " .. findme .. " > /dev/null || (" .. cmd .. ")")
-end
 
 run_once("wicd-client -t")
 run_once("xscreensaver -no-splash")

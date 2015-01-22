@@ -125,12 +125,15 @@
 ! URxvt*url-launcher:                   string
 
 
-Urxvt.font: xft:Inconsolata:pixelsize=18
+URxvt.depth: 32
+URxvt.background: [75]#000000
+URxvt.perl-lib: /home/zak/.urxvt/ext
+URxvt.font: xft:Inconsolata:pixelsize=20
 URxvt.resize-font.smaller: C-minus
 URxvt.resize-font.bigger: C-plus
 URxvt.resize-font.reset: C-equal
 URxvt.resize-font.show: C-question
-Urxvt.perl-ext-common: default,tabbed,matcher,resize-font,-tabbed
+URxvt.perl-ext-common: default,tabbed,matcher,resize-font,-tabbed
 ! --- ~/.Xresources ------------------------------------------------------------
 ! !
 ! ------------------------------------------------------------------------------
