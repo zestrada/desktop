@@ -128,7 +128,8 @@
 URxvt.depth: 32
 URxvt.background: [75]#000000
 URxvt.perl-lib: /home/zak/.urxvt/ext
-URxvt.font: xft:Inconsolata:pixelsize=20
+!URxvt.font: xft:Inconsolata:pixelsize=20
+URxvt.font: xft:Monospace:pixelsize=20
 URxvt.resize-font.smaller: C-minus
 URxvt.resize-font.bigger: C-plus
 URxvt.resize-font.reset: C-equal

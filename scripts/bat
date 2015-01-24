@@ -1,0 +1,3 @@
+#!/bin/bash
+#could do alias, but this is more flexible
+acpitool | grep -e Bat -e ac

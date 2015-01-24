@@ -20,7 +20,7 @@ function run_once(cmd)
   awful.util.spawn_with_shell("pgrep -u $USER -x " .. findme .. " > /dev/null || (" .. cmd .. ")")
 end
 
-run_once("compton -b")
+run_once("compton -b --backend glx --paint-on-overlay --glx-no-stencil --vsync opengl-swc --unredir-if-possible")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -244,7 +244,7 @@ globalkeys = awful.util.table.join(
             awful.client.focus.byidx(-1)
             if client.focus then client.focus:raise() end
         end),
-    awful.key({ modkey,           }, "w", function () mymainmenu:show({keygrabber=true}) end),
+    awful.key({ modkey, "Shift"   }, "w", function () mymainmenu:show({keygrabber=true}) end),
 
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end),
@@ -310,10 +310,14 @@ clientkeys = awful.util.table.join(
             c.maximized_vertical   = not c.maximized_vertical
         end),
     awful.key({ modkey, }, "F1", keydoc.display),
-    awful.key({ modkey }, "Down",  function () awful.client.moveresize(  0,  20,   0,   0) end),
-    awful.key({ modkey }, "Up",    function () awful.client.moveresize(  0, -20,   0,   0) end),
-    awful.key({ modkey }, "Left",  function () awful.client.moveresize(-20,   0,   0,   0) end),
-    awful.key({ modkey }, "Right", function () awful.client.moveresize( 20,   0,   0,   0) end),
+    awful.key({ modkey }, "s",  function () awful.client.moveresize(  0,  20,   0,   0) end),
+    awful.key({ modkey }, "w",    function () awful.client.moveresize(  0, -20,   0,   0) end),
+    awful.key({ modkey }, "a",  function () awful.client.moveresize(-20,   0,   0,   0) end),
+    awful.key({ modkey }, "d", function () awful.client.moveresize( 20,   0,   0,   0) end),
+    awful.key({ modkey }, "Down", function () awful.client.focus.bydirection("down") if client.focus then client.focus:raise() end end),
+    awful.key({ modkey }, "Up", function () awful.client.focus.bydirection("up") if client.focus then client.focus:raise() end end),
+     awful.key({ modkey }, "Left", function () awful.client.focus.bydirection("left") if client.focus then client.focus:raise() end end),
+    awful.key({ modkey }, "Right", function () awful.client.focus.bydirection("right") if client.focus then client.focus:raise() end end),
     awful.key({ modkey, }, "Next", function () awful.util.spawn("xbacklight -dec 5") end),
     awful.key({ modkey, }, "Prior", function () awful.util.spawn("xbacklight -inc 5") end) 
 
@@ -356,7 +360,8 @@ for i = 1, keynumber do
                       if client.focus and tags[client.focus.screen][i] then
                           awful.client.toggletag(tags[client.focus.screen][i])
                       end
-                  end, i==5 and "Toggle tag on this window"))
+                  end, i==5 and "Toggle tag on this window"),
+        awful.key({ "Mod4", }, "l", function () run_once("xscreensaver-command -lock") end, "Lock screen"))
 end
 
 clientbuttons = awful.util.table.join(

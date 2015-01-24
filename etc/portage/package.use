@@ -1,0 +1,4 @@
+x11-terms/rxvt-unicode 256-color alt-font-width perl pixbuf xft -vanilla
+x11-misc/compton opengl
+media-libs/libcanberra alsa
+sys-auth/consolekit acl
