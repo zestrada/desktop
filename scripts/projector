@@ -1,1 +1,10 @@
-xrandr --output DP1 --mode 1024x768
+#!/bin/bash
+#Projector mirror with arbitrary resolution from $1
+#waits indefinitely until a ctrl+c to revert back to normal
+
+MONITOR="eDP1"
+PROJECTOR="DP1"
+
+trap "xrandr --output $MONITOR --auto" SIGINT
+xrandr --output $MONITOR --mode $1 --output $PROJECTOR --same-as $MONITOR
+tail -f /dev/null
