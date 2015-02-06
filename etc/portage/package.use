@@ -2,3 +2,15 @@ x11-terms/rxvt-unicode 256-color alt-font-width perl pixbuf xft -vanilla
 x11-misc/compton opengl
 media-libs/libcanberra alsa
 sys-auth/consolekit acl
+media-video/vlc dvd ffmpeg mpeg mad wxwindows aac dts a52 ogg flac theora oggvorbis matroska freetype bidi xv svga gnutls stream vlm httpd cdda vcd cdio live truetype lua
+>=sys-libs/zlib-1.2.8-r1 minizip
+# required by @steam (argument)
+>=media-libs/libtxc_dxtn-1.0.1-r1 abi_x86_32
+# required by media-libs/sk1libs-0.9.1-r3
+# required by media-gfx/uniconvertor-1.1.5
+# required by media-gfx/inkscape-0.48.5
+# required by inkscape (argument)
+=media-libs/lcms-1.19-r1 python
+mail-client/mutt imap smtp smime gdbm sidebar sasl
+>=app-text/ghostscript-gpl-9.10-r2 cups
+www-client/firefox cups

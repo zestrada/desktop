@@ -131,6 +131,10 @@ batterywidgettimer:start()
 -- Create a textclock widget
 mytextclock = awful.widget.textclock({ align = "right" })
 
+--APW
+--Load the widget.
+local APW = require("apw/widget")
+
 -- Create a systray
 mysystray = widget({ type = "systray" })
 
@@ -179,6 +183,7 @@ mytasklist.buttons = awful.util.table.join(
                                               if client.focus then client.focus:raise() end
                                           end))
 
+
 for s = 1, screen.count() do
     -- Create a promptbox for each screen
     mypromptbox[s] = awful.widget.prompt({ layout = awful.widget.layout.horizontal.leftright })
@@ -211,6 +216,7 @@ for s = 1, screen.count() do
             layout = awful.widget.layout.horizontal.leftright
         },
         mylayoutbox[s],
+        APW,
         batterywidget,
         mytextclock,
         s == 1 and mysystray or nil,
@@ -219,6 +225,7 @@ for s = 1, screen.count() do
     }
 end
 -- }}}
+
 
 -- {{{ Mouse bindings
 root.buttons(awful.util.table.join(
@@ -319,8 +326,7 @@ clientkeys = awful.util.table.join(
      awful.key({ modkey }, "Left", function () awful.client.focus.bydirection("left") if client.focus then client.focus:raise() end end),
     awful.key({ modkey }, "Right", function () awful.client.focus.bydirection("right") if client.focus then client.focus:raise() end end),
     awful.key({ modkey, }, "Next", function () awful.util.spawn("xbacklight -dec 5") end),
-    awful.key({ modkey, }, "Prior", function () awful.util.spawn("xbacklight -inc 5") end) 
-
+    awful.key({ modkey, }, "Prior", function () awful.util.spawn("xbacklight -inc 5") end)
 )
 
 -- Compute the maximum number of digit we need, limited to 9
@@ -361,7 +367,11 @@ for i = 1, keynumber do
                           awful.client.toggletag(tags[client.focus.screen][i])
                       end
                   end, i==5 and "Toggle tag on this window"),
-        awful.key({ "Mod4", }, "l", function () run_once("xscreensaver-command -lock") end, "Lock screen"))
+        awful.key({ "Mod4", }, "l", function () run_once("xscreensaver-command -lock") end, "Lock screen"),
+        awful.key({ }, "XF86AudioRaiseVolume",  APW.Up),
+        awful.key({ }, "XF86AudioLowerVolume",  APW.Down),
+        awful.key({ }, "XF86AudioMute",         APW.ToggleMute)
+        )
 end
 
 clientbuttons = awful.util.table.join(
@@ -425,6 +435,8 @@ client.add_signal("focus", function(c) c.border_color = beautiful.border_focus e
 client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
 
+
 run_once("wicd-client -t")
 run_once("xscreensaver -no-splash")
+run_once("pulseaudio -start")
 -- }}}

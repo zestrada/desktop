@@ -211,3 +211,4 @@ URxvt.perl-ext-common: default,tabbed,matcher,resize-font,-tabbed
 ! ------------------------------------------------------------------------------
 !
 !
+urxvt*termName: rxvt-256color
