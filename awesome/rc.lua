@@ -325,8 +325,8 @@ clientkeys = awful.util.table.join(
     awful.key({ modkey }, "Up", function () awful.client.focus.bydirection("up") if client.focus then client.focus:raise() end end),
      awful.key({ modkey }, "Left", function () awful.client.focus.bydirection("left") if client.focus then client.focus:raise() end end),
     awful.key({ modkey }, "Right", function () awful.client.focus.bydirection("right") if client.focus then client.focus:raise() end end),
-    awful.key({ modkey, }, "Next", function () awful.util.spawn("xbacklight -dec 5") end),
-    awful.key({ modkey, }, "Prior", function () awful.util.spawn("xbacklight -inc 5") end)
+    awful.key({ modkey, }, "Next", function () run_once("xbacklight -dec 2") end),
+    awful.key({ modkey, }, "Prior", function () run_once("xbacklight -inc 2") end)
 )
 
 -- Compute the maximum number of digit we need, limited to 9
