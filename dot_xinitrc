@@ -12,5 +12,6 @@ xinput set-prop "PS/2 Synaptics TouchPad" "Evdev Wheel Emulation Button" 2
 #xinput set-prop "PS/2 Synaptics TouchPad" "Evdev Wheel Emulation Timeout" 200 4 5
 xinput set-prop "PS/2 Synaptics TouchPad" "Evdev Wheel Emulation Axes" 6 7 4 5
 xinput set-prop "PS/2 Synaptics TouchPad" "Evdev Middle Button Emulation" 1
+xinput set-prop "Mouse Pad" "Evdev Middle Button Emulation" 1
 urxvtd -q -f -o
 exec ck-launch-session dbus-launch --sh-syntax --exit-with-session awesome
