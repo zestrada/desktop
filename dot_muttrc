@@ -89,4 +89,4 @@ bind index "^" imap-fetch-mail
 
 auto_view text/html                                      # view html automatically
 alternative_order text/plain text/enriched text/html     # save html for last
-
+set tmpdir=/dev/shm

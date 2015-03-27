@@ -61,3 +61,5 @@ function! AddMuttAliases()
     endif
   endfor
 endfunction
+
+autocmd BufWritePost /dev/shm/mutt-* call AddMuttAliases()
