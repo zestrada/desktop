@@ -1,0 +1,2 @@
+app-emulation/emul-linux-x86-*
+media-video/libav

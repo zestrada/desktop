@@ -1,0 +1,13 @@
+# required by dev-perl/XML-SAX-0.990.0-r1
+# required by dev-perl/XML-Simple-2.200.0-r1
+# required by x11-misc/icon-naming-utils-0.8.90
+# required by x11-themes/adwaita-icon-theme-3.14.1
+# required by x11-libs/gtk+-3.14.9
+# required by dev-cpp/gtkmm-3.14.0-r1
+# required by media-sound/pavucontrol-2.0-r1
+# required by @selected
+# required by @world (argument)
+# /usr/portage/profiles/package.mask:
+# Andreas K. Huettel <dilfridge@gentoo.org> (29 Mar 2015)
+# Mask Perl 5.18 for removal. Please upgrade to Perl 5.20
+=dev-lang/perl-5.18.2-r2

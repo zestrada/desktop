@@ -1,0 +1,5 @@
+setterm -blank 0
+setterm -powersave off
+killall xscreensaver
+xset -dpms
+xset s off
