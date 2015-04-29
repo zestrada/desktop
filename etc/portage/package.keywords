@@ -85,3 +85,5 @@
 =app-misc/ttyrec-1.0.8-r1 ~amd64
 # required by openshot (argument)
 =media-video/openshot-1.4.3 ~amd64
+# required by Kivy (argument)
+=dev-python/Kivy-1.9.0 ~amd64
