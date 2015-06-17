@@ -87,3 +87,14 @@
 =media-video/openshot-1.4.3 ~amd64
 # required by Kivy (argument)
 =dev-python/Kivy-1.9.0 ~amd64
+# required by =wpa_supplicant-2.3 (argument)
+=net-wireless/wpa_supplicant-2.3 ~amd64
+# required by app-emulation/docker (argument)
+=app-emulation/docker-1.6.1 ~amd64
+# required by app-emulation/lxc-1.1.2::gentoo
+# required by app-emulation/docker-1.6.1::gentoo[lxc]
+# required by app-emulation/docker (argument)
+=sys-process/criu-1.5.2 ~amd64
+# required by app-emulation/docker-1.6.1::gentoo[lxc]
+# required by app-emulation/docker (argument)
+=app-emulation/lxc-1.1.2 ~amd64
