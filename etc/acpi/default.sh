@@ -29,8 +29,14 @@ case "$group" in
 			#	xset dpms force off
 			#	;;
       lid)
+          NUM_MONITORS=`cat /sys/class/drm/card0-*/status|grep "^connected" | wc -l`
           case "$id" in
-            close) hibernate-ram;;
+            close) 
+              #Don't change anything if external monitor is hooked up
+              if [ "$NUM_MONITORS" -lt "2" ]; then
+                hibernate-ram
+              fi
+              ;;
             open) :;;
             *)	log_unhandled $* ;;
           esac
