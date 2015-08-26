@@ -278,7 +278,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1)      end),
     awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster(-1)      end),
     awful.key({ modkey, "Control" }, "h",     function () awful.tag.incncol( 1)         end),
-    awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1)         end),
+    --awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol( 1)         end),
     awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts,  1) end),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
 
@@ -326,7 +326,11 @@ clientkeys = awful.util.table.join(
      awful.key({ modkey }, "Left", function () awful.client.focus.bydirection("left") if client.focus then client.focus:raise() end end),
     awful.key({ modkey }, "Right", function () awful.client.focus.bydirection("right") if client.focus then client.focus:raise() end end),
     awful.key({ modkey, }, "Next", function () run_once("xbacklight -dec 2") end),
-    awful.key({ modkey, }, "Prior", function () run_once("xbacklight -inc 2") end)
+    awful.key({ modkey, }, "Prior", function () run_once("xbacklight -inc 2") end),
+    awful.key({ modkey, "Shift", }, "Left", function(c) c.maximized_horizontal = not c.maximized_horizontal end),
+    awful.key({ modkey, "Shift", }, "Right", function(c) c.maximized_horizontal = not c.maximized_horizontal end),
+    awful.key({ modkey, "Shift", }, "Down", function(c) c.maximized_vertical   = not c.maximized_vertical end),
+    awful.key({ modkey, "Shift", }, "Up", function(c) c.maximized_vertical   = not c.maximized_vertical end)
 )
 
 -- Compute the maximum number of digit we need, limited to 9
@@ -368,6 +372,7 @@ for i = 1, keynumber do
                       end
                   end, i==5 and "Toggle tag on this window"),
         awful.key({ "Mod4", }, "l", function () run_once("xscreensaver-command -lock") end, "Lock screen"),
+        awful.key({modkey, "Control"}, "l", function () run_once("xscreensaver-command -lock") end, "Lock screen alt"),
         awful.key({ }, "XF86AudioRaiseVolume",  APW.Up),
         awful.key({ }, "XF86AudioLowerVolume",  APW.Down),
         awful.key({ }, "XF86AudioMute",         APW.ToggleMute)
