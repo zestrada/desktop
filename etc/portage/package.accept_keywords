@@ -1,3 +1,4 @@
-#x11-drivers/xf86-video-intel ~amd64
+x11-drivers/xf86-video-intel ~amd64
 dev-libs/libgcrypt ~amd64
 =www-client/google-chrome-39.0.2171.99_p1 ~amd64
+app-editors/vim ~amd64

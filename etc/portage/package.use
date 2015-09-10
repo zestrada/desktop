@@ -659,3 +659,6 @@ net-print/cups usb
 # required by @selected
 # required by @world (argument)
 >=app-text/texlive-core-2014-r4 xetex
+# required by media-gfx/graphviz-2.26.3-r4::gentoo
+# required by graphviz (argument)
+>=media-libs/gd-2.0.35-r4 truetype fontconfig

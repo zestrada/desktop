@@ -112,7 +112,7 @@ mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
 
 batterywidget = widget({ type = "textbox" })
 batterywidget.text = " | Battery | "
-batterywidgettimer = timer({ timeout = 60 })
+batterywidgettimer = timer({ timeout = 10 })
 
 batterytooltip = awful.tooltip({ objects = { batterywidget } })
 batterytooltip:set_text("Loading...")
@@ -330,7 +330,8 @@ clientkeys = awful.util.table.join(
     awful.key({ modkey, "Shift", }, "Left", function(c) c.maximized_horizontal = not c.maximized_horizontal end),
     awful.key({ modkey, "Shift", }, "Right", function(c) c.maximized_horizontal = not c.maximized_horizontal end),
     awful.key({ modkey, "Shift", }, "Down", function(c) c.maximized_vertical   = not c.maximized_vertical end),
-    awful.key({ modkey, "Shift", }, "Up", function(c) c.maximized_vertical   = not c.maximized_vertical end)
+    awful.key({ modkey, "Shift", }, "Up", function(c) c.maximized_vertical   = not c.maximized_vertical end),
+    awful.key({ modkey, }, "c", function(c) awful.placement.centered(c,nil) end)
 )
 
 -- Compute the maximum number of digit we need, limited to 9

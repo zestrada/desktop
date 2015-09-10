@@ -98,3 +98,6 @@
 # required by app-emulation/docker-1.6.1::gentoo[lxc]
 # required by app-emulation/docker (argument)
 =app-emulation/lxc-1.1.2 ~amd64
+# required by app-editors/vim-7.4.827::gentoo[-minimal]
+# required by vim (argument)
+=app-editors/vim-core-7.4.827 ~amd64
