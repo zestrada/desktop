@@ -662,3 +662,117 @@ net-print/cups usb
 # required by media-gfx/graphviz-2.26.3-r4::gentoo
 # required by graphviz (argument)
 >=media-libs/gd-2.0.35-r4 truetype fontconfig
+# required by app-emulation/wine-1.6.2::gentoo[abi_x86_32,pulseaudio]
+# required by @selected
+# required by @world (argument)
+>=media-sound/pulseaudio-6.0 abi_x86_32
+# required by media-sound/pulseaudio-6.0::gentoo[caps]
+# required by net-misc/spice-gtk-0.28::gentoo[pulseaudio]
+# required by app-emulation/virt-manager-1.1.0-r2::gentoo[gtk]
+# required by @selected
+# required by @world (argument)
+>=sys-libs/libcap-2.24-r2 abi_x86_32
+# required by app-office/libreoffice-bin-4.4.5.2::gentoo
+# required by @selected
+# required by @world (argument)
+>=media-libs/harfbuzz-0.9.41 icu
+# required by sci-libs/scipy-0.15.1::gentoo
+# required by @selected
+# required by @world (argument)
+>=dev-python/numpy-1.9.2 lapack
+# required by x11-libs/libSM-1.2.2-r1::gentoo[uuid]
+# required by x11-libs/libXt-1.1.4::gentoo
+# required by x11-misc/xscreensaver-5.32::gentoo
+# required by @selected
+# required by @world (argument)
+>=sys-apps/util-linux-2.26.2 abi_x86_32
+# required by games-simulation/lincity-ng-2.0::gentoo
+# required by lincity-ng (argument)
+>=media-libs/sdl-mixer-1.2.12-r4 vorbis
+# required by x11-libs/gtk+-2.24.28-r1::gentoo
+# required by app-text/acroread-9.5.5-r3::gentoo
+# required by acroread (argument)
+>=dev-libs/atk-2.16.0-r1 abi_x86_32
+# required by x11-libs/cairo-1.14.2::gentoo
+# required by x11-libs/pango-1.36.8::gentoo
+# required by gnome-base/librsvg-2.40.10::gentoo
+# required by x11-libs/gtk+-2.24.28-r1::gentoo
+# required by app-text/acroread-9.5.5-r3::gentoo
+# required by acroread (argument)
+>=dev-libs/lzo-2.08 abi_x86_32
+# required by app-text/acroread-9.5.5-r3::gentoo
+# required by acroread (argument)
+>=x11-libs/pangox-compat-0.0.2-r1 abi_x86_32
+# required by x11-libs/pango-1.36.8::gentoo
+# required by gnome-base/librsvg-2.40.10::gentoo
+# required by x11-libs/gtk+-2.24.28-r1::gentoo
+# required by app-text/acroread-9.5.5-r3::gentoo
+# required by acroread (argument)
+>=media-libs/harfbuzz-0.9.41 abi_x86_32
+# required by app-text/acroread-9.5.5-r3::gentoo
+# required by acroread (argument)
+>=x11-libs/gtk+-2.24.28-r1:2 abi_x86_32
+# required by gnome-base/librsvg-2.40.10::gentoo
+# required by x11-libs/gtk+-2.24.28-r1::gentoo
+# required by app-text/acroread-9.5.5-r3::gentoo
+# required by acroread (argument)
+>=dev-libs/libcroco-0.6.8-r1 abi_x86_32
+# required by x11-libs/pango-1.36.8::gentoo
+# required by gnome-base/librsvg-2.40.10::gentoo
+# required by x11-libs/gtk+-2.24.28-r1::gentoo
+# required by app-text/acroread-9.5.5-r3::gentoo
+# required by acroread (argument)
+>=x11-libs/cairo-1.14.2 abi_x86_32
+# required by x11-libs/gtk+-2.24.28-r1::gentoo
+# required by app-text/acroread-9.5.5-r3::gentoo
+# required by acroread (argument)
+>=gnome-base/librsvg-2.40.10 abi_x86_32
+# required by app-text/acroread-9.5.5-r3::gentoo
+# required by acroread (argument)
+>=dev-libs/openssl-0.9.8z_p7:0.9.8 abi_x86_32
+# required by x11-libs/pango-1.36.8::gentoo[X]
+# required by gnome-base/librsvg-2.40.10::gentoo
+# required by x11-libs/gtk+-2.24.28-r1::gentoo
+# required by app-text/acroread-9.5.5-r3::gentoo
+# required by acroread (argument)
+>=x11-libs/libXft-2.3.2 abi_x86_32
+# required by x11-libs/gtk+-2.24.28-r1::gentoo
+# required by app-text/acroread-9.5.5-r3::gentoo
+# required by acroread (argument)
+>=x11-libs/libXcomposite-0.4.4-r1 abi_x86_32
+# required by app-text/acroread-9.5.5-r3::gentoo
+# required by acroread (argument)
+>=net-dns/libidn-1.30 abi_x86_32
+# required by x11-libs/gtk+-2.24.28-r1::gentoo
+# required by app-text/acroread-9.5.5-r3::gentoo
+# required by acroread (argument)
+>=x11-libs/pango-1.36.8 abi_x86_32
+# required by x11-libs/cairo-1.14.2::gentoo
+# required by x11-libs/pango-1.36.8::gentoo
+# required by gnome-base/librsvg-2.40.10::gentoo
+# required by x11-libs/gtk+-2.24.28-r1::gentoo
+# required by app-text/acroread-9.5.5-r3::gentoo
+# required by acroread (argument)
+>=x11-libs/pixman-0.32.8 abi_x86_32
+# required by media-libs/harfbuzz-0.9.41::gentoo[icu]
+# required by x11-libs/pango-1.36.8::gentoo
+# required by gnome-base/librsvg-2.40.10::gentoo
+# required by x11-libs/gtk+-2.24.28-r1::gentoo
+# required by app-text/acroread-9.5.5-r3::gentoo
+# required by acroread (argument)
+>=dev-libs/icu-55.1 abi_x86_32
+# required by media-libs/harfbuzz-0.9.41::gentoo[graphite]
+# required by x11-libs/pango-1.36.8::gentoo
+# required by gnome-base/librsvg-2.40.10::gentoo
+# required by x11-libs/gtk+-2.24.28-r1::gentoo
+# required by app-text/acroread-9.5.5-r3::gentoo
+# required by acroread (argument)
+>=media-gfx/graphite2-1.2.4-r1 abi_x86_32
+# required by x11-libs/libXcomposite-0.4.4-r1::gentoo
+# required by x11-libs/gtk+-2.24.28-r1::gentoo
+# required by app-text/acroread-9.5.5-r3::gentoo
+# required by acroread (argument)
+>=x11-proto/compositeproto-0.4.2-r1 abi_x86_32
+# required by app-text/acroread-9.5.5-r3::gentoo
+# required by acroread (argument)
+>=x11-libs/gdk-pixbuf-2.32.1 abi_x86_32
