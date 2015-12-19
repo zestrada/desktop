@@ -1,0 +1,11 @@
+keycode 0x1A = e E eogonek Eogonek
+keycode 0x20 = o O oacute Oacute
+keycode 0x26 = a A aogonek Aogonek
+keycode 0x27 = s S sacute Sacute
+keycode 0x2E = l L lstroke Lstroke
+keycode 0x34 = z Z zabovedot Zabovedot
+keycode 0x35 = x X zacute Zacute
+keycode 0x36 = c C cacute Cacute
+keycode 0x39 = n N nacute Nacute
+keycode 133 = Mode_switch
+keycode 134 = Mode_switch
