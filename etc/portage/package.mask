@@ -1,3 +1,4 @@
 app-emulation/emul-linux-x86-*
 media-video/libav
+>x11-wm/awesome-3.4.15
 #>=net-wireless/wpa_supplicant-2.4-r1

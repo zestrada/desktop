@@ -806,3 +806,10 @@ net-print/cups usb
 # required by @selected
 # required by @world (argument)
 >=x11-libs/libX11-1.6.3 abi_x86_32
+# required by virtual/jpeg-0-r2::gentoo
+# required by media-libs/lcms-2.6-r1::gentoo[jpeg]
+# required by media-libs/libcdr-0.1.1::gentoo
+# required by app-office/libreoffice-bin-5.0.3.2::gentoo
+# required by @selected
+# required by @world (argument)
+>=media-libs/libjpeg-turbo-1.4.2 abi_x86_32

@@ -101,3 +101,13 @@
 # required by app-editors/vim-7.4.827::gentoo[-minimal]
 # required by vim (argument)
 =app-editors/vim-core-7.4.827 ~amd64
+# required by app-editors/vim-7.4.1089::gentoo[-minimal]
+# required by @selected
+# required by @world (argument)
+=app-editors/vim-core-7.4.1089 ~amd64
+# required by app-editors/vim-7.4.1342::gentoo[-minimal]
+# required by @selected
+# required by @world (argument)
+=app-editors/vim-core-7.4.1342 ~amd64
+# required by gvim (argument)
+=app-editors/gvim-7.4.1342 ~amd64
