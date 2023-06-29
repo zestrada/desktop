@@ -27,6 +27,7 @@ packer.startup(function()
   use 'jremmen/vim-ripgrep'
   use 'tomasiser/vim-code-dark'
   use 'github/copilot.vim' -- requires node.js
+  use 'lukas-reineke/indent-blankline.nvim'
   end
 )
 
