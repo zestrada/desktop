@@ -52,7 +52,7 @@ end
 beautiful.init("/home/zak/.config/awesome/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "urxvtc"
+terminal = "xfce4-terminal"
 editor = os.getenv("EDITOR") or "vi"
 editor_cmd = terminal .. " -e " .. editor
 
